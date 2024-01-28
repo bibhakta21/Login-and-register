@@ -1,0 +1,280 @@
+<!-- <html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=radio]{
+                height: 18px;
+                width: 18px;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>Register From</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="" alt="Avatar" class="avatar">
+                </div>
+                <label for='First_Name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='First_Name' required><br>
+		        <label for='Last_Name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter your last name' name='Last_Name' required><br>
+		        <label for='Gender' ><b>Sex : </b></label>
+		        <input type='radio' name='gender' value='male' required>
+		        <label ><b>Male</b></label>
+		        <input type='radio' name='gender' value='female' required>
+		        <label ><b>Female</b></label><br>
+            	<label for ='Email'><b>Email Id :  </b></label>
+            	<input type="email" placeholder="Enter email" name="Email" float="right"  required><br>  
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Password" name="password" required><br>  
+            	<button type="submit"><b>Signup</b></button><br>     
+            	Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+            </div></center>
+        </form>
+    </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register An Account - Your Bookstore</title>
+  <style>
+    * {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+padding-top: 70px;
+  background-color: #f4f4f4;
+}
+
+.wrapper {
+  margin: auto;
+  position: relative;
+  width: 400px;
+  height: 540px;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wrapper .icon_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+  font-size: 1.5em;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.registration_form {
+  padding: 20px;
+  text-align: center;
+}
+
+.registration_form h2 {
+  font-size: 30px;
+  color: #089da1;
+  margin-bottom: 20px;
+}
+
+.input_box {
+  position: relative;
+  margin: 15px 0;
+}
+
+.input_box input {
+  width: 100%;
+  height: 40px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.input_box .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.remember_forget {
+  font-size: 14px;
+  color: #666;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember_forget label input {
+  margin-right: 5px;
+}
+
+.remember_forget a {
+  color: #089da1;
+  text-decoration: none;
+}
+
+.submit_button {
+  width: 100%;
+  height: 45px;
+  background: #089da1;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.login_register {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login_register p a {
+  color: #089da1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login_register p a:hover {
+  color: #077d86;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <span class="icon_close"><ion-icon name="close-outline"></ion-icon></span>
+
+    <div class="registration_form">
+        <h2>Register An Account</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <div class="input_box">
+                <input type="text" placeholder="Full Name" name='First_Name' required />
+            </div>
+            <div class="input_box">
+                <input type="text" placeholder="Full Name" name='Last_Name' required />
+            </div>
+            <div style="margin-right: 70px;">
+            <label for='Gender' style="color: rgb(72, 71, 71);" ><b>Gender : </b></label>
+            <input type='radio' name='gender' value='male' required>
+            <label><b>Male</b></label>
+            <input type='radio' name='gender' value='female' required>
+            <label ><b>Female</b></label><br>
+            </div>
+        
+
+            <div class="input_box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" placeholder="Email Address" name="Email" required />
+            </div>
+
+            <div class="input_box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" placeholder="Password" name="password" required />
+            </div>
+
+            <!-- <div class="input_box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" placeholder="Confirm Password" required name="confirm_password"/>
+            </div> -->
+
+            <div class="remember_forget">
+                <label><input type="checkbox" />Remember me</label>
+                <a href="#">Forgot Password</a>
+            </div>
+
+            <button type="submit" class="submit_button">Register</button>
+
+            <div class="login_register">
+                <p>
+                    Already have an account?
+                    <a href="http://localhost:8000/login/" class="register_link">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+before starting django activate using  below code
+env\scripts\activate
+
+
+running project
+python manage.py runserver
+
+1. \sql
+2. \connect root@localhost:3307
+3. create database website;
+4. show databases; //to see how many database are there
+5. use website; //to use website database to make table
+
+6. create table users(First_Name varchar(50) not null,Last_Name varchar(50) not null, gender varchar(10) not null, Email varchar(50) not null unique,password varchar(50) not null);
+
+7. show tables;
+
+8. pip install django
+
+//to connect mysql and django
+9. pip install mysql-connector-python
+
+//make first django project
+10. django-admin startproject website
+
+//to check either all setup is correct and server is running or not
+11. python manage.py runserver
+
+//click the url server to check shown in terminal
+
+//first i want to create signup app so
+lets make signup app
+12. django-admin startapp signup
+13. django-admin startapp login
+
+
+
+//Inside setting.py initialize your signup and login
+# Application definition
+
+14. INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'signup', #for signup=this is comment
+    'login',    #for login=this is comment
+]
+
+
+
+//create template folder inside second website direcory
+
+15. and in setting.py add= 'DIRS': ['template'],
+
+
+// now inside template create two html file one is signup.html,login.html
+//do design as per you need
+
+//now open signup folder and open views.py
+//now create function inside views.py
+
+16. def signaction(request):
+        return None
+
+17.//do same for login view
+def loginaction(request):
+        return None
+
+
+18. 
+go to sumina login/website/website= inner website
+and in url.py
+import
+18. from signup.views import signaction
+18. from login.views import loginaction
+add path inside url patterns
+ path('signup/',signaction),
+    path('login/',loginaction),
+
+19. Inside signup app
+return render(request,'signup.html')
+19. Inside login  app, inside view
+return render(request,'login.html')
+
+
+App run
+
+cd website
+python manage.py runserver
+
+
+
+
+
+
+
